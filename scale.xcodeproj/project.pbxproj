@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FA70DC0E2DB4EF76006976BA /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FA70DC0D2DB4EF76006976BA /* KeychainAccess */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FA12D4D82DA90AB90089F025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA70DC0E2DB4EF76006976BA /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = scale;
 			packageProductDependencies = (
+				FA70DC0D2DB4EF76006976BA /* KeychainAccess */,
 			);
 			productName = scale;
 			productReference = FA12D4CA2DA90AB80089F025 /* scale.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = FA12D4C12DA90AB80089F025;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FA70DC0C2DB4EF09006976BA /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FA12D4CB2DA90AB80089F025 /* Products */;
 			projectDirPath = "";
@@ -550,6 +559,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA70DC0C2DB4EF09006976BA /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA70DC0D2DB4EF76006976BA /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA70DC0C2DB4EF09006976BA /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA12D4C22DA90AB80089F025 /* Project object */;
 }
