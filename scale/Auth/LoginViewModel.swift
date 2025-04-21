@@ -6,6 +6,12 @@
 //
 
 import Foundation
+import KeychainAccess
+
+enum LoginError : Error {
+    case LoginFailed
+    case SavingTokenFailed
+}
 
 @MainActor
 class LoginViewModel: ObservableObject {
@@ -14,13 +20,18 @@ class LoginViewModel: ObservableObject {
 
     @Published var isLoggingIn: Bool = false
 
-    public func login() async {
+    public func login() async throws {
         let client = getClient()
         isLoggingIn = true;
 
         guard let response = try? await client.login(
             body: .json(.init(password: password, username: username))
-        ).ok
+        ).ok else {
+            isLoggingIn = false
+            throw LoginError.LoginFailed
+        }
+
+        print("login response:" , response)
 
     }
 }

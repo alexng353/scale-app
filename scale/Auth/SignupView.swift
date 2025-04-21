@@ -1,38 +1,39 @@
 //
-//  LoginView.swift
+//  SignupView.swift
 //  scale
 //
-//  Created by Alexander Ng on 2025-04-20.
+//  Created by Alexander Ng on 2025-04-21.
 //
 
 import SwiftUI
-import KeychainAccess
 
-struct LoginView: View {
+struct SignupView: View {
     @ObservedObject var authVM: AuthViewModel = AuthViewModel()
-    @ObservedObject var loginVM: LoginViewModel = LoginViewModel()
+    @ObservedObject var signupVM: SignupViewModel = SignupViewModel()
 
     @AppStorage("isSignedIn") var isSignedIn: Bool = false;
 
     var body: some View {
         VStack(spacing: 12){
-
             TextFieldWithLabel(
-                labelText: "Username or Email Address",
-                placeHolderText: "Username (Email Address)",
-                text: $loginVM.username,
+                labelText: "Full Name",
+                text: $signupVM.realName
+            )
+            TextFieldWithLabel(
+                labelText: "Email Address",
+                text: $signupVM.email,
             )
             SecureFieldWithLabel(
                 labelText: "Password",
-                text: $loginVM.password
+                text: $signupVM.password
             )
-            
+
             Button(action: {
                 Task {
-                    try await loginVM.login()
+                    try await signupVM.signup()
                 }
             }) {
-                Text("Log In")
+                Text("Sign Up")
                     .foregroundStyle(.white)
             }
             .padding()
@@ -50,8 +51,7 @@ struct LoginView: View {
             Button(action: {
                 authVM.currentView = .signup
             }) {
-                Text("Sign Up")
-
+                Text("Log In")
             }
         }
         .padding()
@@ -59,5 +59,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    SignupView()
 }

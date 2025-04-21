@@ -9,11 +9,7 @@ import Foundation
 import OpenAPIURLSession
 import KeychainAccess
 
-enum APIInstantiationError: Error {
-    case InvalidURL
-}
-
-func getClient() throws -> Client {
+func getClient() -> Client {
     let keychain = Keychain(service: "icu.ayo.scale")
     
     let serverUrlString = "http://localhost:8080"; // diabolical - fix on prod please
