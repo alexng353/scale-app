@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FA70DC0E2DB4EF76006976BA /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FA70DC0D2DB4EF76006976BA /* KeychainAccess */; };
+		FAC6CF8A2DB6198F00D17447 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = FAC6CF892DB6198F00D17447 /* Algorithms */; };
+		FAC6CF8E2DB61A2F00D17447 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = FAC6CF8D2DB61A2F00D17447 /* OpenAPIRuntime */; };
+		FAC6CF912DB61A4100D17447 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = FAC6CF902DB61A4100D17447 /* OpenAPIURLSession */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC6CF912DB61A4100D17447 /* OpenAPIURLSession in Frameworks */,
+				FAC6CF8A2DB6198F00D17447 /* Algorithms in Frameworks */,
+				FAC6CF8E2DB61A2F00D17447 /* OpenAPIRuntime in Frameworks */,
 				FA70DC0E2DB4EF76006976BA /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +117,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FAC6CF932DB61A5800D17447 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FA12D4CC2DA90AB80089F025 /* scale */,
@@ -118,6 +125,9 @@
 			name = scale;
 			packageProductDependencies = (
 				FA70DC0D2DB4EF76006976BA /* KeychainAccess */,
+				FAC6CF892DB6198F00D17447 /* Algorithms */,
+				FAC6CF8D2DB61A2F00D17447 /* OpenAPIRuntime */,
+				FAC6CF902DB61A4100D17447 /* OpenAPIURLSession */,
 			);
 			productName = scale;
 			productReference = FA12D4CA2DA90AB80089F025 /* scale.app */;
@@ -203,6 +213,10 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FA70DC0C2DB4EF09006976BA /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				FAC6CF882DB6198F00D17447 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				FAC6CF8B2DB61A1F00D17447 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
+				FAC6CF8C2DB61A2F00D17447 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+				FAC6CF8F2DB61A4100D17447 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FA12D4CB2DA90AB80089F025 /* Products */;
@@ -274,6 +288,10 @@
 			isa = PBXTargetDependency;
 			target = FA12D4C92DA90AB80089F025 /* scale */;
 			targetProxy = FA12D4E22DA90AB90089F025 /* PBXContainerItemProxy */;
+		};
+		FAC6CF932DB61A5800D17447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FAC6CF922DB61A5800D17447 /* OpenAPIGenerator */;
 		};
 /* End PBXTargetDependency section */
 
@@ -404,8 +422,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9VT4RTT9Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -431,8 +451,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9VT4RTT9Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -565,8 +587,40 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+		FAC6CF882DB6198F00D17447 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+		FAC6CF8B2DB61A1F00D17447 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-generator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.2;
+			};
+		};
+		FAC6CF8C2DB61A2F00D17447 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
+		FAC6CF8F2DB61A4100D17447 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-urlsession";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -576,6 +630,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA70DC0C2DB4EF09006976BA /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		FAC6CF892DB6198F00D17447 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC6CF882DB6198F00D17447 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		FAC6CF8D2DB61A2F00D17447 /* OpenAPIRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC6CF8C2DB61A2F00D17447 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
+		};
+		FAC6CF902DB61A4100D17447 /* OpenAPIURLSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC6CF8F2DB61A4100D17447 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
+			productName = OpenAPIURLSession;
+		};
+		FAC6CF922DB61A5800D17447 /* OpenAPIGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC6CF8B2DB61A1F00D17447 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */;
+			productName = "plugin:OpenAPIGenerator";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,11 +9,14 @@ import SwiftUI
 import KeychainAccess
 
 struct LoginView: View {
+    @ObservedObject var authVM: AuthViewModel = AuthViewModel()
+
     @AppStorage("isSignedIn") var isSignedIn: Bool = false;
     @State private var username: String = "";
     @State private var password: String = "";
     @FocusState private var emailFieldIsFocused
     @FocusState private var passwordFieldIsFocused
+
     var body: some View {
         VStack(spacing: 12){
             VStack(alignment: .leading, spacing: 4) {
