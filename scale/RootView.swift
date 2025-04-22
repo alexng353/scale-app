@@ -13,7 +13,7 @@ struct RootView: View {
         if (isSignedIn) {
             ContentView()
         } else {
-            LoginView()
+            AuthView()
         }
     }
 }

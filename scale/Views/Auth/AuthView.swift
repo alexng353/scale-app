@@ -15,7 +15,7 @@ struct AuthView: View {
             case .login:
                 LoginView(authVM: authVM)
             case .signup:
-                Text("not done yet")
+                SignupView(authVM: authVM)
         }
     }
 }

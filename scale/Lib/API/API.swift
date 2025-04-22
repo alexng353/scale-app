@@ -22,8 +22,6 @@ func getClient() -> Client {
     guard let token = try? keychain.get("auth.token") else {
         return Client(serverURL: serverUrl, transport: transport)
     }
-
-    print("token: " + token)
     
     let client = Client(
         serverURL: serverUrl,

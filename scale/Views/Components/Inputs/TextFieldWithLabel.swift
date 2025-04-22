@@ -28,7 +28,7 @@ struct TextFieldWithLabel: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(labelText)
             TextField(placeHolderText, text: $text)
-                .textInputAutocapitalization(.never)
+                .textInputAutocapitalization(.never) // TODO: make this configurable
                 .disableAutocorrection(true)
                 .padding()
                 .background(.gray.opacity(0.2))
